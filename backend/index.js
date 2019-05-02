@@ -20,11 +20,11 @@ app.use(morgan('dev'));
 const storage = multer.diskStorage({
     destination: path.join(__dirname, 'public/uploads'),
     filename(req, file, cb) {
-        cb(null, new Date().getTime()+ path.extname(file.originalname));  //El metodo de fecha es para darle un nombre al archivo subido 
+        cb(null, new Date().getTime() + path.extname(file.originalname));  //El metodo de fecha es para darle un nombre al archivo subido 
     }
 })
-app.use(multer({storage}).single('image'));
-app.use(express .urlencoded({extended: false}));
+app.use(multer({ storage }).single('image'));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //Routes
