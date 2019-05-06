@@ -3,7 +3,7 @@ class BookService {
         this.URI = 'http://localhost:3000/api/books';
     }
 
-    async getBook(){
+    async getBooks(){
         const response = await fetch(this.URI);
         const books = await response.json();
         return books;
@@ -24,6 +24,8 @@ class BookService {
             method: 'DELETE'
         });
         const data = await res.json();
+        console.log(data);
+        
         
         
     }
